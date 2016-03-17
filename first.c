@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-typedef struct demo
-{
-	short i;
-	char a[];
-}demo1;
-
-void demo(int a[2][2])
+void demo(int **a)
 {
 	printf("%d",a[1][1]);
 }
@@ -19,6 +12,10 @@ int main()
 	pid_t pid;
 	int count = 0;
 	int i;
+	int a[2][2] = {1,2,3,4};
+	int *b[2];
+	b[0] = a[0];
+	b[1] = a[1];
 	for(i=0;i<2;i++)
 	{
 		pid_t pid;
