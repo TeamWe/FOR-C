@@ -6,6 +6,7 @@ void print(int *a)
         printf("%-4d",a[i]);
 	printf("\n");
 }
+//向下调整
 void siftdown(int *a,int n,int i)
 {
 	int t;
@@ -24,7 +25,7 @@ void siftdown(int *a,int n,int i)
 	}
 	a[i] = t;
 }
-
+//这个函数可以删去或是不用读，向上调整
 void siftup(int *a,int i)
 {
 	int t,j=(i-1)/2;
@@ -39,7 +40,7 @@ void siftup(int *a,int i)
 	}
 	a[i] = t;
 }
-
+//建立最大堆，想一想为什么我用向下调整
 void createheap(int *a,int length)
 {
 	int i;
@@ -50,7 +51,7 @@ void createheap(int *a,int length)
 		print(a);
 	}
 }
-
+//堆排每次从最高的取出来放在最后
 void head_sort(int *a,int length)
 {
 	int i,t;
@@ -63,9 +64,7 @@ void head_sort(int *a,int length)
 	}
 }
 
-
-
-int main()
+int main(int argc,char *argv[])
 {
 	int a[] = {4,3,7,8,4,1};
 	createheap(a,6);
